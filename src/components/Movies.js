@@ -4,9 +4,18 @@ import { movies } from '../data';
 const Movies = () => {
   return (
     <div>
-        {/*{code here}*/}
-    </div>
-  );
-};
-
+      <h1>Movies Page</h1>
+      {movies.map(movie=> 
+        <div>
+          <strong><p>Name: {movie.title}</p></strong>
+          <p>Time: {movie.time}</p>
+          <ul>
+            {movie.genres.map(genre=>
+              <li>{genre}</li>
+            )}
+          </ul>
+        </div>
+      )}
+    </div>)
+}
 export default Movies;
